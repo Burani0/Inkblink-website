@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Example</title>
+    <style>
+        .home__handle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .home__img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            width: 100%;
+            max-height: 400px;
+        }
+
+        @media (max-width: 600px) {
+            .home__img {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home__handle">
+        <img src="assets/img/Screenshot (602).png" alt="" class="home__img">
+    </div>
+</body>
+</html>
