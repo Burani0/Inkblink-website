@@ -76,6 +76,119 @@
   }
 }
 
+.testimonial__container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative; /* Ensure the container is the reference point */
+  padding-bottom: 2rem; /* Add some padding at the bottom for the pagination */
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.testimonial__card {
+  flex: 0 0 30%;
+  background-color: var(--container-color);
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.5rem;
+  margin: 0 1rem;
+  box-sizing: border-box;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center; /* Center the pagination dots */
+  position: absolute;
+  bottom: -20px; /* Adjust this value to position below the cards */
+  left: 50%;
+  transform: translateX(-50%); /* Center the pagination container */
+  width: 100%; /* Ensure the pagination spans the entire container width */
+  margin-top: 1rem;
+  z-index: 10; /* Ensure the pagination is on top if needed */
+  margin-left: 50%;
+}
+
+
+.testimonial__img {
+  width: 60px;
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+
+.testimonial__description {
+  font-size: var(--small-font-size);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .testimonial__card {
+    flex: 0 0 45%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .testimonial__card {
+    flex: 0 0 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.services__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.services__card {
+    background-color: var(--container-color);
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.services__img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.services__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: .75rem;
+}
+
+.services__button {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    color: var(--first-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.services__button:hover {
+    color: var(--first-color-alt);
+}
+
+.services__icon {
+    margin-left: .5rem;
+    font-size: 1.25rem;
+}
+
+
         </style>
     </head>
     <body>
@@ -146,12 +259,12 @@
                     </div>
 
                     <div class="home__social">
-                        <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
+                        <!-- <a href="https://www.linkedin.com/" target="_blank" class="home__social-link">
                             <i class='bx bxl-linkedin-square' ></i>
                         </a>
                         <a href="https://github.com/" target="_blank" class="home__social-link">
                             <i class='bx bxl-github'></i>
-                        </a>
+                        </a> -->
                         <a href="https://discord.gg/ksKwBXQY" target="_blank" class="home__social-link">
                             <i class='bx bxl-instagram'></i>
                         </a>
@@ -523,186 +636,46 @@
 
             <!--=============== SERVICES ===============-->
             <section class="services section">
-                <span class="section__subtitle">My Services</span>
-                <h2 class="section__title">What I Offer</h2>
-
+                <!-- <span class="section__subtitle">My Services</span> -->
+                <h2 style="font-size: 35px; font-weight: bolder;" class="section__title">Our Services</h2>
+            
                 <div class="services__container container grid">
                     <div class="services__card">
-                        <h3 class="services__title">Book Cover <br> Design</h3>
+                        <img src="assets/img/INK BLINK profile compressed-10.jpg" alt="Book Cover Design" class="services__img">
 
-                        <span class="services__button">
-                            See more <i class='bx bx-right-arrow-alt' services__icon></i>
-                        </span>
-
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <i class='bx bx-x services__modal-close'></i>
-
-                                <h3 class="services__modal-title">Book Cover Designer</h3>
-                                <p class="services__modal-description">
-                                    Service with more than 1 years of experience. 
-                                    Providing quality work to clients and companies.
-                                </p>
-
-                                <ul class="services__modal-list">
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            &#8226 High-quality Eye-Catching book cover design
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            &#8226 Professional design for your book cover.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            &#8226 100% Satisfication Guranteed. 
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            &#8226 100% Licensed images will be used.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            &#8226 My whole attention and support from start to finish.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
-
+            
                     <div class="services__card">
-                        <h3 class="services__title">Game <br> Designer</h3>
-
-                        <span class="services__button">
-                            See more <i class='bx bx-right-arrow-alt' services__icon></i>
-                        </span>
-
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <i class='bx bx-x services__modal-close'></i>
-
-                                <h3 class="services__modal-title">Game Designer</h3>
-                                <p class="services__modal-description">
-                                    Service with more than 3 years of experience. 
-                                    Providing quality work to clients and companies.
-                                </p>
-
-                                <ul class="services__modal-list">
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I develop the user interface.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            Web page development.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I create ux element interactions.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I position your company brand.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            Design and mockups of products for companies.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <img src="assets/img/INK BLINK profile compressed-11.jpg" alt="Game Designer" class="services__img">
+ 
                     </div>
-
+            
                     <div class="services__card">
-                        <h3 class="services__title">Visual <br> Designer</h3>
-
-                        <span class="services__button">
-                            See more <i class='bx bx-right-arrow-alt' services__icon></i>
-                        </span>
-  
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <i class='bx bx-x services__modal-close'></i>
-
-                                <h3 class="services__modal-title">Visual Designer</h3>
-                                <p class="services__modal-description">
-                                    Service with more than 3 years of experience. 
-                                    Providing quality work to clients and companies.
-                                </p>
-
-                                <ul class="services__modal-list">
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I develop the user interface.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            Web page development.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I create ux element interactions.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            I position your company brand.
-                                        </p>
-                                    </li>
-
-                                    <li class="services__modal-list">
-                                        <i class='bx bx-check services__modal-icon'></i>
-                                        <p class="services__modal-info">
-                                            Design and mockups of products for companies.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <img src="assets/img/INK BLINK profile compressed-12.jpg" alt="Visual Designer" class="services__img">
+   
+                    </div>
+                                
+                    <div class="services__card">
+                        <img src="assets/img/INK BLINK profile compressed-13.jpg" alt="Visual Designer" class="services__img">
+                   
+                    </div>
+                                
+                    <div class="services__card">
+                        <img src="assets/img/INK BLINK profile compressed-15.jpg" alt="Visual Designer" class="services__img">
+                     
+                    </div>
+                                
+                    <div class="services__card">
+                        <img src="assets/img/INK BLINK profile compressed-16.jpg" alt="Visual Designer" class="services__img">
+                    
                     </div>
                 </div>
             </section>
+            
 
             <!--=============== WORK ===============-->
             <section class="work section" id="work">
-                <span class="section__subtitle">My Portfolio</span>
+                <!-- <span class="section__subtitle">My Portfolio</span> -->
                 <h2 style="font-size: 35px; font-weight: bolder;" class="section__title">Recent Works</h2>
 
                 <!-- <div class="work__filters">
@@ -713,6 +686,26 @@
                 </div> -->
 
                 <div class="work__container container grid">
+                    <div class="work__card mix web">
+                        <img src="assets/img/Screenshot (611).png" alt="" class="work__img">
+
+                       
+                        <h3 class="work__title">Banner for NoniVie Washing Bay</h3>
+                    
+                    </div>
+
+                    <div class="work__card mix movil">
+                        <img src="assets/img/Screenshot (613).png" alt="" class="work__img">
+
+                        <h3 class="work__title">Vehicle graphics for Gombe Junior school Kikajjo</h3>
+
+                    </div>
+                    <div class="work__card mix movil">
+                        <img src="assets/img/Screenshot (615).png" alt="" class="work__img">
+
+                       
+                        <h3 class="work__title">Business Cards for Allen Bakes Bakery</h3>
+                    </div>
                     <div class="work__card mix web">
                         <img src="assets/img/Screenshot (603).png" alt="" class="work__img">
 
@@ -781,38 +774,36 @@
 
             <!--=============== TESTIMONIALS ===============-->
             <section class="testimonial section">
-                <span class="section__subtitle">My clients say</span>
-                <h2 class="section__title">Testimonial</h2>
+                
+                <h2 class="section__title">Testimonial ::: My clients say</h2>
+               
 
                 <div class="testimonial__container container swiper">
                     <div class="swiper-wrapper">
                         <div class="testimonial__card swiper-slide">
-                            <img src="assets/img/testimonial1.png" alt="" class="testimonial__img">
+                            <img src="assets/img/Thiar🥰 20230801_195647.jpg" alt="" class="testimonial__img">
 
-                            <h3 class="testimonial__name">John Doe</h3>
+                            <h3 class="testimonial__name">Ruth</h3>
                             <p class="testimonial__description">
-                                A really good job, all aspects of the project were
-                                followed step by step and with good results.
+                                We've been working with InkBlink for over a year, and their service has been impeccable.
                             </p>
                         </div>
 
                         <div class="testimonial__card swiper-slide">
-                            <img src="assets/img/testimonial2.png" alt="" class="testimonial__img">
+                            <img src="assets/img/Feliz 20231014_064946.jpg" alt="" class="testimonial__img">
 
-                            <h3 class="testimonial__name">Paula Vusy</h3>
+                            <h3 class="testimonial__name">Felix</h3>
                             <p class="testimonial__description">
-                                A really good job, all aspects of the project were
-                                followed step by step and with good results.
+                                The team at InkBlink brought our vision to life with their incredible printing expertise. 
                             </p>
                         </div>
 
                         <div class="testimonial__card swiper-slide">
-                            <img src="assets/img/testimonial3.png" alt="" class="testimonial__img">
+                            <img src="assets/img/letasi 20231027_182249.jpg" alt="" class="testimonial__img">
 
-                            <h3 class="testimonial__name">Sara Cill</h3>
+                            <h3 class="testimonial__name">Glosh </h3>
                             <p class="testimonial__description">
-                                A really good job, all aspects of the project were
-                                followed step by step and with good results.
+                                InkBlink transformed our brand with its highly professional top-notch printing solutions
                             </p>
                         </div>
                     </div>
